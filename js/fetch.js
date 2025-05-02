@@ -21,7 +21,7 @@ const showCard = (data) => {
     const cardContainer = document.getElementById('card-container')
     // get one by one data
     data.forEach(element => {
-        // console.log(element)
+       // console.log(element)
         // get feature
         
         const feature = element.features;
@@ -45,7 +45,7 @@ const showCard = (data) => {
                 <h3 class="text-xl font-semibold">${element.name}</h3>
                 <p>${element.published_in}</p>
                 <div class="card-actions justify-end">
-                  <button onclick="detailsHandler(${element.id})" class="btn btn-primary">Buy Now</button>
+                  <button onclick="detailsHandler('${element.id}')" class="btn btn-primary">Buy Now</button>
                 </div>
               </div>
         `
@@ -62,7 +62,7 @@ const detailsHandler = async(id) => {
     const data = await res.json()
     const getData = data.data;
     // showDetails(getData)
-    console.log('clicked', id)
+    console.log(data)
 }
 
 // const showDetails = (value) => {
