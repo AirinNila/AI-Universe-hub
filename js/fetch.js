@@ -62,7 +62,7 @@ const detailsHandler = async(id) => {
     const data = await res.json()
     const getData = data.data;
     // showDetails(getData)
-    console.log('click', id)
+    console.log('clicked', id)
 }
 
 // const showDetails = (value) => {
