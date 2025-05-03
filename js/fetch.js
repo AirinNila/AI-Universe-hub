@@ -80,33 +80,33 @@ const showDetails = (value) => {
     modelContainer.innerHTML = `
     <div class="flex flex-col justify-center items-center gap-2 border-2 border-[#EB5757] bg-[#EB57570D] p-2">
               <h3 class="font-semibold text-md ">${value.data.description}</h3>
-              <div class="flex justify-center gap-2">
+              <div class="flex justify-center gap-2 text-sm">
                 <div class="p-2 flex flex-col gap-1 items-center justify-center bg-white">
-                  <p>${value.data.pricing[0].plan}</p>
-                  <p>${value.data.pricing[0].price}</p>
+                  <p>${value.data.pricing[0]?.plan}</p>
+                  <p>${value.data.pricing[0]?.price}</p>
                 </div>
                 <div class="p-2 flex flex-col gap-1 items-center justify-center bg-white">
-                  <p>${value.data.pricing[1].plan}</p>
-                  <p>${value.data.pricing[1].price}</p>
+                  <p>${value.data.pricing[1]?.plan}</p>
+                  <p>${value.data.pricing[1]?.price}</p>
                 </div>
                 <div class="p-2 flex flex-col gap-1 items-center justify-center bg-white">
-                  <p>${value.data.pricing[2].plan}</p>
-                  <p>${value.data.pricing[2].price}</p>
+                  <p>${value.data.pricing[2]?.plan}</p>
+                  <p>${value.data.pricing[2]?.price}</p>
                 </div>
               </div>
               <div class="flex justify-center">
                 <div>
                 <ul>
                   <h3 class="font-semibold text-md">Feature</h3>
-                  <li>1.${value.data.features['1'].feature_name}</li>
-                  <li>2.${value.data.features['2'].feature_name}</li>
-                  <li>3.${value.data.features['3'].feature_name}</li>
+                  <li>1.${value.data.features['1']?.feature_name}</li>
+                  <li>2.${value.data.features['2']?.feature_name}</li>
+                  <li>3.${value.data.features['3']?.feature_name}</li>
                 </ul>
                 </div>
                 <div class="">
                 <ul>
                   <h3 class="font-semibold text-md">Integration</h3>
-                   <li>1.${value.data.integrations[0]}</li>
+                  <li>1.${value.data.integrations[0]}</li>
                   <li>2.${value.data.integrations[1]}</li>
                   <li>3.${value.data.integrations[2]}</li>
                 </ul>
@@ -114,10 +114,11 @@ const showDetails = (value) => {
               </div>
             </div>
             <!-- secoend image div -->
-            <div class="flex flex-col justify-start items-center gap-2 border-2 border-[#585858]">
+            <div class="flex flex-col justify-start items-center gap-2 border-2 border-[#585858] p-2">
+                <div class="bg-[#EB5757] text-White">${value.data.accuracy?.score || 'No'}_Accuracy</div>
               <img src="${value.data.image_link[0]}" alt="image">
-              <h3>${value.data.input_output_examples[0].input}</h3>
-              <p>${value.data.input_output_examples[0].output}</p>
+              <h3>${value.data.input_output_examples[0]?.input || 'Can you give any example'}</h3>
+              <p>${value.data.input_output_examples[0]?.output || 'No! Not yet. Take a break'}</p>
             </div>
     `
     
