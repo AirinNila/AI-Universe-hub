@@ -1,20 +1,25 @@
 // get data
-const showData = async () => {
+const showData = async (isShowData) => {
     const res = await fetch('https://openapi.programming-hero.com/api/ai/tools')
     const data = await res.json();
     const dataTool = data.data.tools;
 
-    showCard(dataTool)
+    showCard(dataTool, isShowData)
     // console.log(dataTool)
 }
 
 // handle show card
-const showCard = (data) => {
+const showCard = (data, isShowData) => {
     // show some data
     const showButtonContainer = document.getElementById('show-all-button-container')
-     if(data.length > 9){
+    
+   isShowData = false
+     if(data.length > 9 && isShowData === false){
         data = data.slice(0,9)
         showButtonContainer.classList.remove('hidden')
+     }
+     else{
+        showButtonContainer.classList.add('hidden')
      }
     
 
@@ -56,18 +61,21 @@ const showCard = (data) => {
 
 }
 
+// handle show all
+
+
 // details handler
 const detailsHandler = async(id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
     const data = await res.json()
-    const getData = data.data;
-    // showDetails(getData)
-    console.log(data)
+    // const getData = data.data;
+    showDetails(data)
+    //console.log(data)
 }
 
-// const showDetails = (value) => {
-  
-//     show-details-model.showModal()
-// }
+const showDetails = (value) => {
+    console.log(value)
+    my_details_model.showModal()
+}
 
 showData()

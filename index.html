@@ -67,7 +67,7 @@
     <!-- show all button -->
      <div class="flex justify-center mt-4">
      <div id="show-all-button-container" class="hidden">
-      <button  class="btn bg-[#EB5757] text-white ">See More</button>
+      <button onclick="showData(true)"  class="btn bg-[#EB5757] text-white ">See More</button>
      </div>
     </div>
     </section>
@@ -75,8 +75,8 @@
     <!-- show details -->
     <section>
       <!-- You can open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_3.showModal()">open modal</button>
-<dialog id="my_modal_3" class="modal">
+
+<dialog id="my_details_model" class="modal">
   <div class="modal-box">
     <form method="dialog">
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
