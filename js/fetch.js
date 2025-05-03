@@ -26,10 +26,8 @@ const showCard = (data, isShowData) => {
     const cardContainer = document.getElementById('card-container')
     // get one by one data
     data.forEach(element => {
-       // console.log(element)
-        // get feature
+        console.log(element)
         
-        const feature = element.features;
         // console.log(feature)
     //   for(const value of feature){
         
@@ -45,9 +43,11 @@ const showCard = (data, isShowData) => {
               <div class="card-body">
                 <h2 class="card-title">Feature</h2>
                 <ul id="feature-container" class="flex flex-col items-start gap-2">
-                    ${feature}
+                    <li>1.${element.features[0]}</li>
+                    <li>2.${element.features[1]}</li>
+                    <li>3.${element.features[2]}</li>
                 </ul>
-                <h3 class="text-xl font-semibold">${element.name}</h3>
+                <h3 class="text-xl font-semibold mt-4">${element.name}</h3>
                 <p>${element.published_in}</p>
                 <div class="card-actions justify-end">
                   <button onclick="detailsHandler('${element.id}')" class="btn btn-primary">Buy Now</button>
@@ -74,7 +74,7 @@ const detailsHandler = async(id) => {
 }
 
 const showDetails = (value) => {
-    console.log(value)
+    // console.log(value)
     const modelContainer = document.getElementById('model-container');
   
     modelContainer.innerHTML = `
